@@ -189,6 +189,7 @@
 		android:textIsSelectable="false"
 		android:layout_below="@id/status_layout"
         android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:autoLink="web"/>
 
 </RelativeLayout>
