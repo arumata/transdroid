@@ -501,7 +501,7 @@ public class QbittorrentAdapter implements IDaemonAdapter {
 					null,
 					null,
 					null,
-					settings.getType()));
+					settings.getType(), null));
 			// @formatter:on
 		}
 

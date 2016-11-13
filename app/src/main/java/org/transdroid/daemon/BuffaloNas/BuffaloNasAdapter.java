@@ -301,7 +301,7 @@ public class BuffaloNasAdapter implements IDaemonAdapter {
 					null,
 					null,
 					null,
-					settings.getType()));
+					settings.getType(), null));
 			// @formatter:on
 		}
 

@@ -87,7 +87,7 @@ public class StatsParser {
 							null, // Not supported in the web interface
 							null, // Not supported in the web interface
 							null, // Not supported in the web interface
-							Daemon.KTorrent));
+							Daemon.KTorrent, null));
 					id++; // Stop/start/etc. requests are made by ID, which is the order number in the returned XML list :-S
 					
 				} else if (next == XmlPullParser.START_TAG && name.equals("torrent")){

@@ -138,10 +138,11 @@ public class DelugeAdapter implements IDaemonAdapter {
 	private static final String RPC_LABEL = "label";
 	private static final String RPC_TRACKERS = "trackers";
 	private static final String RPC_TRACKER_STATUS = "tracker_status";
+	private static final String RPC_COMMENT = "comment";
 	private static final String[] RPC_FIELDS_ARRAY =
 			new String[]{RPC_NAME, RPC_STATUS, RPC_SAVEPATH, RPC_RATEDOWNLOAD, RPC_RATEUPLOAD, RPC_NUMPEERS,
 					RPC_NUMSEEDS, RPC_TOTALPEERS, RPC_TOTALSEEDS, RPC_ETA, RPC_DOWNLOADEDEVER, RPC_UPLOADEDEVER,
-					RPC_TOTALSIZE, RPC_PARTDONE, RPC_LABEL, RPC_MESSAGE, RPC_TIMEADDED, RPC_TRACKER_STATUS};
+					RPC_TOTALSIZE, RPC_PARTDONE, RPC_LABEL, RPC_MESSAGE, RPC_TIMEADDED, RPC_TRACKER_STATUS, RPC_COMMENT};
 	private static final String RPC_DETAILS = "files";
 	private static final String RPC_INDEX = "index";
 	private static final String RPC_PATH = "path";
@@ -669,7 +670,7 @@ public class DelugeAdapter implements IDaemonAdapter {
 						tor.has(RPC_TIMEADDED)? new Date((long) (tor.getDouble(RPC_TIMEADDED) * 1000L)): null,
 						null, // Not available
 						error,
-						settings.getType()));
+						settings.getType(), tor.getString(RPC_COMMENT)));
 				// @formatter:on
 			}
 		}

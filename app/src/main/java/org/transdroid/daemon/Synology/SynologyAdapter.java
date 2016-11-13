@@ -340,8 +340,8 @@ public class SynologyAdapter implements IDaemonAdapter {
 				new Date(detail.getLong("create_time") * 1000),
 				null,
 				"",
-				settings.getType()
-			// @formatter:on
+				settings.getType(), null
+				// @formatter:on
 		);
 	}
 

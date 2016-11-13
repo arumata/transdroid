@@ -82,7 +82,7 @@ public class StatsParser {
 							null,
 							null,
 							null,
-							Daemon.Tfb4rt));
+							Daemon.Tfb4rt, null));
 					
 				} else if (next == XmlPullParser.START_TAG && name.equals("transfer")){
 					

@@ -381,7 +381,7 @@ public class Aria2Adapter implements IDaemonAdapter {
 					null, // Not available
 					null, // Not available
 					error, 
-					settings.getType()));
+					settings.getType(), null));
 			// @formatter:on
 
 		}

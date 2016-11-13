@@ -541,7 +541,7 @@ public class UtorrentAdapter implements IDaemonAdapter {
 					Math.min(available, 1f), // Can be > 100% if multiple peers have 100%
 					tor.getString(RPC_LABEL_IDX).trim(), addedOnDate, completedOnDate,
 					// uTorrent doesn't give the error message, so just remind that there is some error
-					status == TorrentStatus.Error ? "See GUI for error message" : null, settings.getType()));
+					status == TorrentStatus.Error ? "See GUI for error message" : null, settings.getType(), null));
 		}
 		return torrents;
 

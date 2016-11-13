@@ -418,7 +418,7 @@ public class VuzeAdapter implements IDaemonAdapter {
 				new Date((Long) statsinfo.get("time_started")), // dateAdded
 				null, // Unsupported?
 				error,
-				settings.getType()));
+				settings.getType(), null));
 			
 		}
 		

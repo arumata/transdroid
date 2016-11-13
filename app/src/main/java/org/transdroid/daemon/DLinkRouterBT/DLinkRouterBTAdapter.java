@@ -379,7 +379,7 @@ public class DLinkRouterBTAdapter implements IDaemonAdapter {
 				null,
 				null,
 				null,
-				settings.getType());
+				settings.getType(), null);
 			// @formatter:on
 
 			torrents.add(new_t);

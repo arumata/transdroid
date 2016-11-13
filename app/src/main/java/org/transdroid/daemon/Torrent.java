@@ -50,6 +50,12 @@ public final class Torrent implements Parcelable, Comparable<Torrent>, Finishabl
 	final private float available;
 	private String label;
 
+	public String getComment() {
+		return comment;
+	}
+
+	final private String comment;
+
 	final private Date dateAdded;
 	final private Date dateDone;
 	final private String error;
@@ -76,6 +82,7 @@ public final class Torrent implements Parcelable, Comparable<Torrent>, Finishabl
 		this.partDone = in.readFloat();
 		this.available = in.readFloat();
 		this.label = in.readString();
+		this.comment = in.readString();
 
 		long lDateAdded = in.readLong();
 		this.dateAdded = (lDateAdded == -1) ? null : new Date(lDateAdded);
@@ -86,9 +93,9 @@ public final class Torrent implements Parcelable, Comparable<Torrent>, Finishabl
 	}
 
 	public Torrent(long id, String hash, String name, TorrentStatus statusCode, String locationDir, int rateDownload,
-			int rateUpload, int seedersConnected, int seedersKnown, int leechersConnected, int leechersKnown, int eta,
-			long downloadedEver, long uploadedEver, long totalSize, float partDone, float available, String label,
-			Date dateAdded, Date realDateDone, String error, Daemon daemon) {
+				   int rateUpload, int seedersConnected, int seedersKnown, int leechersConnected, int leechersKnown, int eta,
+				   long downloadedEver, long uploadedEver, long totalSize, float partDone, float available, String label,
+				   Date dateAdded, Date realDateDone, String error, Daemon daemon, String comment) {
 		this.id = id;
 		this.hash = hash;
 		this.name = name;
@@ -109,6 +116,7 @@ public final class Torrent implements Parcelable, Comparable<Torrent>, Finishabl
 		this.partDone = partDone;
 		this.available = available;
 		this.label = label;
+		this.comment = comment;
 
 		this.dateAdded = dateAdded;
 		if (realDateDone != null) {
@@ -399,6 +407,7 @@ public final class Torrent implements Parcelable, Comparable<Torrent>, Finishabl
 		dest.writeFloat(partDone);
 		dest.writeFloat(available);
 		dest.writeString(label);
+		dest.writeString(comment);
 
 		dest.writeLong((dateAdded == null) ? -1 : dateAdded.getTime());
 		dest.writeLong((dateDone == null) ? -1 : dateDone.getTime());

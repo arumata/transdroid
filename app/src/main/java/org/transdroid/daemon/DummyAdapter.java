@@ -116,7 +116,7 @@ public class DummyAdapter implements IDaemonAdapter {
 							null, 
 							status == TorrentStatus.Error?
 									"Dummy error": null,
-							settings.getType()));
+							settings.getType(), null));
 		}
 		for (String label : labels) {
 			dummyLabels.add(new Label(label, 5));
@@ -168,7 +168,7 @@ public class DummyAdapter implements IDaemonAdapter {
 				File upload = new File(URI.create(file));
 				dummyTorrents.add(new Torrent(0, "torrent_file", upload.getName(), TorrentStatus.Queued, "/downloads/"
 						+ file, 0, 0, 0, 0, 0, 0, -1, 0, 0, 1024 * 1024 * 1000, 0, 1F, "isos", new Date(), null, null,
-						settings.getType()));
+						settings.getType(), null));
 				return new DaemonTaskSuccessResult(task);
 
 			case AddByUrl:
@@ -180,7 +180,7 @@ public class DummyAdapter implements IDaemonAdapter {
 				Uri uri = Uri.parse(url);
 				dummyTorrents.add(new Torrent(0, "torrent_byurl", uri.getLastPathSegment(), TorrentStatus.Queued,
 						"/downloads/" + uri.getLastPathSegment(), 0, 0, 0, 0, 0, 0, -1, 0, 0, 1024 * 1024 * 1000, 0,
-						1F, "music", new Date(), null, null, settings.getType()));
+						1F, "music", new Date(), null, null, settings.getType(), null));
 				return new DaemonTaskSuccessResult(task);
 
 			case AddByMagnetUrl:
@@ -190,7 +190,7 @@ public class DummyAdapter implements IDaemonAdapter {
 				Uri magnetUri = Uri.parse(magnet);
 				dummyTorrents.add(new Torrent(0, "torrent_magnet", magnetUri.getLastPathSegment(),
 						TorrentStatus.Queued, "/downloads/" + magnetUri.getLastPathSegment(), 0, 0, 0, 0, 0, 0, -1, 0,
-						0, 1024 * 1024 * 1000, 0, 1F, "books", new Date(), null, null, settings.getType()));
+						0, 1024 * 1024 * 1000, 0, 1F, "books", new Date(), null, null, settings.getType(), null));
 				return new DaemonTaskSuccessResult(task);
 
 			case Remove:

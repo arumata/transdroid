@@ -542,7 +542,7 @@ public class TransmissionAdapter implements IDaemonAdapter {
 					null,
 					new Date(tor.getLong(RPC_DATEADDED) * 1000L),
 					new Date(tor.getLong(RPC_DATEDONE) * 1000L),
-					errorString, settings.getType()));
+					errorString, settings.getType(), null));
 			// @formatter:on
 		}
 

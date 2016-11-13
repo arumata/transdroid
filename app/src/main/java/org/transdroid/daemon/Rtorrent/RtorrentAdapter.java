@@ -472,7 +472,7 @@ public class RtorrentAdapter implements IDaemonAdapter {
 						added,
 						finished,
 						error,
-						settings.getType()));
+						settings.getType(), null));
 					// @formatter:on
 
 				} else {
@@ -504,7 +504,7 @@ public class RtorrentAdapter implements IDaemonAdapter {
 						added,
 						finished,
 						error,
-						settings.getType()));
+						settings.getType(), null));
 					// @formatter:on
 
 				}
