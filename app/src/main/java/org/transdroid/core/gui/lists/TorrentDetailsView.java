@@ -86,8 +86,18 @@ public class TorrentDetailsView extends RelativeLayout {
 
         statusLayout.setStatus(torrent.getStatusCode());
         statusText.setText(getResources().getString(R.string.status_status, local.getProgressStatusEta(getResources())));
-        commentText.setText(torrent.getComment());
-        Linkify.addLinks(commentText, Linkify.WEB_URLS);
+
+        String comment = torrent.getComment();
+        if(comment != null && !comment.isEmpty())
+        {
+            commentText.setText(comment);
+            Linkify.addLinks(commentText, Linkify.WEB_URLS);
+            commentText.setVisibility(View.VISIBLE);
+        }
+        else {
+            commentText.setVisibility(View.INVISIBLE);
+        }
+
         ratioText.setText(getResources().getString(R.string.status_ratio, local.getRatioString()));
         seedersText.setText(getResources().getString(R.string.status_seeders, torrent.getSeedersConnected(), torrent.getSeedersKnown()));
         leechersText.setText(getResources().getString(R.string.status_leechers, torrent.getLeechersConnected(), torrent.getLeechersKnown()));
